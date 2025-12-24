@@ -1,24 +1,25 @@
 pipline {
 	agent any
-	stages('Build'){
-		steps{
-			echo "Build"
+	stages{
+		stage ('Build')
+			steps{
+				echo "Build"
+			}
 		}
-	}
-	stages('Test'){
-		steps{
-			echo "Test"
+		stage('Test'){
+			steps{
+				echo "Test"
+			}	
 		}
-	}
-	stages('Integration'){
-		steps{
-			echo "Integration"
+		stage('Integration'){
+			steps{
+				echo "Integration"
+			}
 		}
-	}
 	post {
-	always{
-		echo"I runinng always"
-		}
+		always{
+			echo"I runinng always"
+			}
 	success{
 		echo"I run you when you successed"
 		}
